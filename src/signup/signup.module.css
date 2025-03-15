@@ -1,0 +1,87 @@
+.section-sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #B5E6FE;
+}
+
+.main-div {
+    display: flex;
+    width: 70%;
+    height: 80vh;
+    max-width: 1000px;
+    background-color: white;
+}
+
+.left-div {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-div h2 {
+    margin: 0px auto;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.left-div p {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.p{
+    text-align: center;
+    width: 60%;
+    margin: 0px auto;
+}
+.left-div form {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-div label {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.left-div input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.left-div button {
+    padding: 10px 0px;
+    /* background-color: #fff; */
+    background-color: #CCEDF4;
+    color: #0027d4;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.left-div button:hover {
+    background-color: #007AFF;
+    color: white;
+}
+.a-last{
+    color: black;
+}
+.p-last{
+    margin: 40px 0px;
+}
+.right-div {
+    width: 50%;
+    background-image: url('https://themes.techzaa.in/techmin_r/assets/auth-img-DZpMPfts.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
