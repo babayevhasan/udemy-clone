@@ -14,7 +14,7 @@ function App() {
               <Link to="/home">Home</Link>
             </li>
             <li>
-              <Link to="/signup">Sign in</Link>
+              <Link to="/signup">Sign up</Link>
             </li>
           </ul>
         </nav>
