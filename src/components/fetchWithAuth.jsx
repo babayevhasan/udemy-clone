@@ -17,7 +17,7 @@ export const fetchWithAuth = async (url, options = {}) => {
     if (response.status === 401 && refreshToken) {
       console.log("Access Token expired. Using Refresh Token...");
       
-      accessToken = Math.random().toString(36).substr(2); // Yeni Access Token oluştur
+      accessToken = Math.random().toString(36).substr(2); 
       localStorage.setItem("accessToken", accessToken);
   
       response = await fetchWithToken(accessToken);

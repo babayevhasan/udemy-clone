@@ -49,19 +49,16 @@ function Signin() {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // Kullanıcı adını belirlemek için email'den yararlanalım
-        const nameFromEmail = email.split("@")[0]; // "nubar" gibi isim çıkarır
+        const nameFromEmail = email.split("@")[0]; 
 
         const userData = { 
-            fullName: nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1), // İlk harfi büyük yap
+            fullName: nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1),
             email: email,
             token: "fake-jwt-token-123" 
         };
 
-        // Kullanıcı bilgilerini localStorage'a kaydet
         localStorage.setItem("user", JSON.stringify(userData));
 
-        // Dashboard sayfasına yönlendir
         navigate("/dashboard");
     };
 

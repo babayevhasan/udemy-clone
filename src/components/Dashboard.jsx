@@ -6,19 +6,17 @@ function Dashboard() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // LocalStorage'dan kullanıcı verisini al
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         } else {
-            // Eğer giriş yapılmamışsa Signin sayfasına yönlendir
             navigate("/signin");
         }
     }, [navigate]);
 
     const handleLogout = () => {
-        localStorage.removeItem("user"); // Kullanıcı bilgisini temizle
-        navigate("/signin"); // Signin sayfasına yönlendir
+        localStorage.removeItem("user"); 
+        navigate("/signin");
     };
 
     return (

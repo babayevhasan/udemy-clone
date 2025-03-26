@@ -18,10 +18,8 @@ function Signup() {
             token: "fake-jwt-token-123"
         };
 
-        // Kullanıcı bilgilerini localStorage'a kaydet
         localStorage.setItem("user", JSON.stringify(userData));
 
-        // Kayıt olunca otomatik giriş yapmış gibi dashboard'a yönlendir
         navigate("/dashboard");
     };
 
