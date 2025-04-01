@@ -1,6 +1,6 @@
-import styles from './signup.module.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from './signup.module.css';
 
 function Signup() {
     const [fullName, setFullName] = useState("");
@@ -11,49 +11,76 @@ function Signup() {
     const handleSignup = (e) => {
         e.preventDefault();
 
-        const userData = { 
-            fullName: fullName, 
-            email: email, 
-            password: password, 
-            token: "fake-jwt-token-123"
-        };
+        if (fullName && email && password) {
+            const userData = { 
+                fullName: fullName, 
+                email: email, 
+                password: password, 
+                token: "fake-jwt-token-123"
+            };
 
-        localStorage.setItem("user", JSON.stringify(userData));
+            localStorage.setItem("user", JSON.stringify(userData));
+            localStorage.setItem("accessToken", userData.token); 
 
-        navigate("/dashboard");
+            navigate("/dashboard");
+        } else {
+            console.log("Please fill in all fields!");
+        }
     };
 
     return (
-        <>
-            <section className={styles["section-sign"]}>
-                <div className={styles["main-div"]}>
-                    <div className={styles["left-div"]}>
-                        <h2>Free Sign Up</h2>
-                        <p className={styles["p"]}>Enter your email address and password to create an account.</p>
-                        <form onSubmit={handleSignup}>
-                            <label>Full Name</label>
-                            <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder='Enter your name' required />
+        <section className={styles["section-sign"]}>
+            <div className={styles["main-div"]}>
+                <div className={styles["left-div"]}>
+                    <h2>Free Sign Up</h2>
+                    <p className={styles["p"]}>Enter your email address and password to create an account.</p>
+                    <form onSubmit={handleSignup}>
+                        <label>Full Name</label>
+                        <input 
+                            type="text" 
+                            value={fullName} 
+                            onChange={(e) => setFullName(e.target.value)} 
+                            placeholder='Enter your name' 
+                            required 
+                        />
 
-                            <label>Email address</label>
-                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='user@demo.com' required />
+                        <label>Email address</label>
+                        <input 
+                            type="email" 
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)} 
+                            placeholder='user@demo.com' 
+                            required 
+                        />
 
-                            <label>Password</label>
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' required />
+                        <label>Password</label>
+                        <input 
+                            type="password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            placeholder='Password' 
+                            required 
+                        />
 
-                            <p>
-                                <input type="checkbox" required />
-                                I accept Terms and Conditions
-                            </p>
-                            <button className={styles["Login-btn"]} type="submit">Sign Up</button>
-                        </form>
-                        <p className={styles["p-last"]}>Do you have an account? <a href="/signin">Sign in</a></p>
-                    </div>
-
-                    <div className={styles["right-div"]}></div>
+                        <p>
+                            <input type="checkbox" required />
+                            I accept Terms and Conditions
+                        </p>
+                        <button className={styles["Login-btn"]} type="submit">Sign Up</button>
+                    </form>
+                    <p className={styles["p-last"]}>
+                        Do you have an account? <a href="/signin">Sign in</a>
+                    </p>
                 </div>
-            </section>
-        </>
+
+                <div className={styles["right-div"]}></div>
+            </div>
+        </section>
     );
 }
 
 export default Signup;
+
+
+
+
